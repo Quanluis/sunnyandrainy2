@@ -1,0 +1,26 @@
+h1 {
+  text-align: center;
+  color: blue;
+}
+button {
+  background-color: pink;
+  font-size:  18px;
+}
+html {
+  background-color: #99ffff;
+}
+div{
+  text-align: center;
+}
+button {
+  margin-top: 40px;
+}
+form {
+  font-size: 18px;
+}
+.lon {
+  margin-right: 20px;
+}
+.lat {
+  margin-right: 20px;
+}
