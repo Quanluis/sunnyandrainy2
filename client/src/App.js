@@ -5,6 +5,7 @@ import {getWeather} from "./services/weather";
 import DailyWeather from "./DailyWeather";
 
 
+
 class App extends Component {
    
   constructor(){
@@ -52,7 +53,8 @@ class App extends Component {
       time = {dailyWeather.time}
       summary = {dailyWeather.summary}
       temperatureHigh = {dailyWeather.temperatureHigh}
-      temperatureLow = {dailyWeather.temperatureLow} />)
+      temperatureLow = {dailyWeather.temperatureLow} />
+    )
 
     return (
       <div>
