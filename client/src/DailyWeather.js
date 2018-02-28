@@ -1,5 +1,6 @@
 import React from "react";
 import {convertTimestamp} from "./utils"
+import './App.css'
 
 const DailyWeather = props => {
     return(
