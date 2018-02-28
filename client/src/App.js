@@ -46,6 +46,9 @@ class App extends Component {
 
   
   render() {
+    const dailyWeather = this.state.dailyWeather;
+    const dailyWeatherGrid = dailyWeather.map((dailyWeather, index) => {dailyWeather})
+
     return (
       <div>
         <h1>
@@ -74,6 +77,7 @@ class App extends Component {
             </label>
           </form>
           <button onClick = {this.Submit} >Get weather!</button>
+          {dailyWeatherGrid}
       </div>
     );
   }
