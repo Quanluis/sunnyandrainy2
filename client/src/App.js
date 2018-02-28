@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import {getWeather} from "./services/weather";
+
 
 class App extends Component {
    
@@ -8,7 +10,9 @@ class App extends Component {
     super();
     this.state = {
       lat: 0,
-      lon: 0
+      lon: 0,
+      dailyWeather: []
+
     }
 
   this.Submit = this.Submit.bind(this);
@@ -30,8 +34,16 @@ class App extends Component {
 
   Submit(e){
     e.preventDefault();
-    console.log("THIS WORKS"); 
+    getWeather(this.state.lat, this.state.lon)
+    .then(response => {
+      const dailyWeather = response.data.daily.data;
+      this.setState({
+        dailyWeather: dailyWeather
+      });
+
+    })
   };
+
   
   render() {
     return (
