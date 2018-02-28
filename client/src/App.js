@@ -47,7 +47,7 @@ class App extends Component {
   
   render() {
     const dailyWeather = this.state.dailyWeather;
-    const dailyWeatherGrid = dailyWeather.map((dailyWeather, index) => {dailyWeather})
+    const dailyWeatherGrid = dailyWeather.map((dailyWeather, index) => <h1> daily</h1>)
 
     return (
       <div>
