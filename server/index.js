@@ -1,6 +1,8 @@
-//input
+//inport
+const path = require('path');
 const express = require('express');
 const axios = require('axios');
+
 
 //config
 require('dotenv').config();
@@ -11,6 +13,7 @@ console.log(API_KEY);
 //creation of stuff
 const serverApp = express();
 const port = process.env.PORT || 5000;
+serverApp.use(express.static('client/build'));
 
 serverApp.get('/forecast/:lat,:lon',function (request, response){
     const {lat, lon} = request.params;
@@ -26,6 +29,9 @@ serverApp.get('/forecast/:lat,:lon',function (request, response){
               });
 
           });
+});
+serverApp.get('*', (request, response) => {
+    response.sendFile('index.html', {root: path.resolve('client/build')});
 });
 
 serverApp.listen(port, () => {
