@@ -6,9 +6,9 @@ const axios = require('axios');
 
 //config
 require('dotenv').config();
-console.log(process.env);
+
 const {API_KEY} = process.env;
-console.log(API_KEY);
+
 
 //creation of stuff
 const serverApp = express();
@@ -20,7 +20,6 @@ serverApp.get('/forecast/:lat,:lon',function (request, response){
      const url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${lon}`
      axios.get(url)
           .then(res => {
-           response.json(res.data)
            response.status(200).json(res.data)
           })
           .catch(err =>{
