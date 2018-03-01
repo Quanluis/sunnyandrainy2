@@ -33,6 +33,12 @@ class App extends Component {
       lon: +e.target.value 
     });
   }
+  geo(e){
+   if (navigator.geolocation){
+     navigator.geolocation.getCurrentPosition('position');
+   };
+  }
+ 
 
   Submit(e){
     e.preventDefault();
@@ -46,7 +52,6 @@ class App extends Component {
     })
   };
 
-  
   render() {
     const dailyWeather = this.state.dailyWeather;
     const dailyWeatherGrid = dailyWeather.map((dailyWeather, index) => <DailyWeather key={index}
@@ -84,6 +89,7 @@ class App extends Component {
             </label>
           </form>
           <button onClick = {this.Submit} >Get weather!</button>
+          <button onClick = {this.geo}> Use Geo </button>
           {dailyWeatherGrid}
       </div>
     );
